@@ -197,7 +197,9 @@ defmodule Backpex.HTML.Form do
           name={@name}
           id={@id}
           value={Phoenix.HTML.Form.normalize_value(@type, @value)}
-          class={@input_class || ["input w-full input-lg text-base", @input_class, @errors != [] && "input-error bg-error/10"]}
+          class={
+            @input_class || ["input input-lg w-full text-base", @input_class, @errors != [] && "input-error bg-error/10"]
+          }
           {@rest}
         />
       </fieldset>
